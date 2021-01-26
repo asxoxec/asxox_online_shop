@@ -15,7 +15,17 @@ class CategorySeeder extends Seeder
     public function run()
     {
         $categories=[
-            ["name"=>"အိမ်သုံး ပစ္စည်းများ","image"=>"1611390662_user6-128x128.jpg","icon"=>"1611390662_user6-128x128.jpg"],
+            ["name"=>"အိမ်သုံး ပစ္စည်းများ","image"=>"Home_850x.png","icon"=>"home.png"],
+            ["name"=>"ကျန်းမာရေး ပစ္စည်းများ","image"=>"g_850x.jpg","icon"=>"medical.png"],
+            ["name"=>"အလှအပ ပစ္စည်းများ","image"=>"c_850x.jpg","icon"=>"cosmectic.png"],
+            ["name"=>"အားကစားပစ္စည်းများ","image"=>"e_850x.jpg","icon"=>"sports.png"],
+            ["name"=>"ထီးများ","image"=>"umbrella_85o.jpg","icon"=>"umbrella.png"],
+
+
+
+
+
+
         ];
 
         foreach($categories as $category){
