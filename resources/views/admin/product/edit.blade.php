@@ -123,6 +123,27 @@
                                                             <div class="row">
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
+                                                                        <label for="pprice">Size :</label>
+                                                                        <input type="text"
+                                                                            class="form-control rounded" id="psize"
+                                                                            name="psize" value="{{$product->size}}"
+                                                                            style="border:1px solid black;">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="pdiscount">Color :</label>
+                                                                        <input type="text"
+                                                                            class="form-control rounded" id="pcolor"
+                                                                            name="pcolor" value="{{$product->color}}"
+                                                                            style="border:1px solid black;">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
                                                                         <label for="price">Price :</label>
                                                                         <input type="number"
                                                                             class="form-control rounded" id="discount"

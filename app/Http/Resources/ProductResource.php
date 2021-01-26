@@ -21,6 +21,8 @@ class ProductResource extends JsonResource
             'description'=>$this->description,
             'cover'=>asset('product/'.$this->cover),
             'price'=>$this->price,
+            'color'=>$this->color,
+            'size'=>$this->size,
             'discount'=>$this->discount,
             'category'=>$this->category->id,
             'subcategory'=>$this->subcategory->id,

@@ -18,6 +18,8 @@ class CreateProductsTable extends Migration
             $table->string('title'); 
             $table->longtext('description');
             $table->string('cover');
+            $table->string('size')->nullable();
+            $table->string('color')->nullable();
             $table->integer('price');          
             $table->integer('discount')->nullable();
             $table->integer('category_id');

@@ -36,7 +36,6 @@ class ProductController extends Controller
             'ptitle' => 'required',
             'pimage' => 'required',
             'pprice' => 'required',
-            'pdiscount' => 'required',
             'category_id' => 'required',
             'subcategory_id' => 'required'
          ]);
@@ -82,6 +81,8 @@ class ProductController extends Controller
             'description' => $detail,
             'title' => $request->ptitle,
             'cover' => $covername,
+            'size' => $request->psize,
+            'color' => $request->pcolor,
             'price' => $request->pprice,
             'discount' => $request->pdiscount,
             'category_id' => $request->category_id,
@@ -137,7 +138,6 @@ class ProductController extends Controller
             'pdescription' => 'required',
             'ptitle' => 'required',
             'pprice' => 'required',
-            'pdiscount' => 'required',
             'category_id' => 'required',
             'subcategory_id' => 'required'
          ]);
@@ -207,6 +207,8 @@ class ProductController extends Controller
             'description' => $detail,
             'title' => $request->ptitle,
             'cover' => $covername,
+            'size' => $request->psize,
+            'color' => $request->pcolor,
             'price' => $request->pprice,
             'discount' => $request->pdiscount,
             'category_id' => $request->category_id,

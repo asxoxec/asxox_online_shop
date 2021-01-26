@@ -114,6 +114,27 @@
                                                             <div class="row">
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
+                                                                        <label for="pprice">Size :</label>
+                                                                        <input type="text"
+                                                                            class="form-control rounded" id="psize"
+                                                                            name="psize"
+                                                                            style="border:1px solid black;">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="pdiscount">Color :</label>
+                                                                        <input type="text"
+                                                                            class="form-control rounded" id="pcolor"
+                                                                            name="pcolor"
+                                                                            style="border:1px solid black;">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
                                                                         <label for="pprice">Price :</label>
                                                                         <input type="number"
                                                                             class="form-control rounded" id="pprice"
@@ -342,9 +363,9 @@
                 $(function() {
                     // Summernote
                     $('.textarea').summernote({
-                        height: 285,
+                        height: 370,
                         placeholder: 'Please Fill Product Description',
-                        minHeight: 285,
+                        minHeight: 370,
                     })
                 })
                 </script>
