@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Http\Resources\DetailResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProductResource extends JsonResource
@@ -21,9 +22,9 @@ class ProductResource extends JsonResource
             'cover'=>$this->cover,
             'price'=>$this->price,
             'discount'=>$this->discount,
-            'category'=>$this->category,
-            'subcategory'=>$this->subcategory,
-            'detail'=>$this->details,
+            'category'=>$this->category->id,
+            'subcategory'=>$this->subcategory->id,
+            'detail'=>DetailResource::collection($this->details),
 
         ];
     }
