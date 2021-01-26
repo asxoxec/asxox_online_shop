@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ApiController;
 use App\Http\Controllers\api\TagController;
 use App\Http\Controllers\Api\OrderController;
+use App\Http\Controllers\api\SlideController;
 use App\Http\Controllers\api\ProductController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\api\CustomerController;
@@ -42,6 +43,9 @@ Route::post('create/customer',[CustomerController::class,'store'])->name('custom
 Route::get('order',[OrderController::class,'Order_list'])->name('order.list');
 // order Create
 Route::post('create/order',[OrderController::class,'store'])->name('order.create');
+
+// slide list
+Route::get('slide',[SlideController::class,'Slide_list'])->name('slide.list');
 
 
 Route::group(['middleware'=>'jwt.auth'], function () {

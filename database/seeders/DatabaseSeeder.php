@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Database\Seeders\SlideSeeder;
 use Database\Seeders\CategorySeeder;
 use Database\Seeders\SubCategorySeeder;
 
@@ -18,5 +19,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         $this->call(CategorySeeder::class);
         $this->call(SubCategorySeeder::class);
+        $this->call(SlideSeeder::class);
+
     }
 }

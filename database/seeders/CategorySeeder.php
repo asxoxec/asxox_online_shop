@@ -20,12 +20,6 @@ class CategorySeeder extends Seeder
             ["name"=>"အလှအပ ပစ္စည်းများ","image"=>"c_850x.jpg","icon"=>"cosmectic.png"],
             ["name"=>"အားကစားပစ္စည်းများ","image"=>"e_850x.jpg","icon"=>"sports.png"],
             ["name"=>"ထီးများ","image"=>"umbrella_85o.jpg","icon"=>"umbrella.png"],
-
-
-
-
-
-
         ];
 
         foreach($categories as $category){
