@@ -83,6 +83,16 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{route('slide.index')}}" class="nav-link {{ (request()->is('admin/customer')) ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-audio-description"></i>
+                        <p>
+                            Slide Images
+                        </p>
+                    </a>
+                </li>
+
+
                 <!-- <li class="nav-item has-treeview">
                     <a href="#" class="nav-link ">
                         <i class="nav-icon fas fa-cart-arrow-down"></i>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\SlideController;
 use App\Http\Controllers\Admin\DetailController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\Admin\SubCategoryController;
 Route::view('/','admin.site.dashboard');
 
 Route::group(['prefix' => 'admin'], function () {
+    Route::resource('slide', SlideController::class);
     Route::resource('category',CategoryController::class);
     Route::resource('subcategory',SubCategoryController::class);
     Route::resource('tag',TagController::class);
