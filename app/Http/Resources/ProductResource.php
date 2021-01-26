@@ -19,7 +19,7 @@ class ProductResource extends JsonResource
             'id'=>$this->id,
             'title'=>$this->title,
             'description'=>$this->description,
-            'cover'=>$this->cover,
+            'cover'=>asset('product/'.$this->cover),
             'price'=>$this->price,
             'discount'=>$this->discount,
             'category'=>$this->category->id,

@@ -60,16 +60,24 @@
                                     <td class="d-flex">
                                         <a href="{{Route('product.edit',$product->id)}}"
                                             class="btn btn-primary btn-sm">
-                                            <i class="fas fa-edit"></i>
+                                            <i class="fas fa-edit"> Edit</i>
                                         </a>
                                         |
+                                        @if(is_null($product->deleted_at))
                                         <form method="POST" action="{{Route('product.destroy',$product->id)}}">
                                             @csrf
                                             {{method_field('DELETE')}}
                                             <button type="submit" class="btn btn-danger btn-sm">
-                                                <i class="fas fa-trash"></i>
+                                                <i class="fas fa-trash"> Delete</i>
                                             </button>
                                         </form>
+                                        @else
+                                        <a href="{{Route('product.restore',$product->id)}}"
+                                            class="btn btn-warning btn-sm">
+                                            <i class="fas fa-reply"> Restore</i>
+                                        </a>
+                                        @endif
+
                                     </td>
                                 </tr>
 

@@ -22,7 +22,8 @@ class CategorySeeder extends Seeder
             Category::create([
                 'name'=>$category['name'],
                 'image'=>$category['image'],
-                'icon'=>$category['icon'],
+
+                'icon'=>$category['icon']
 
             ]);
         }

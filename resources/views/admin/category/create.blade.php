@@ -50,6 +50,12 @@
                                         style="border:1px solid black;">
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="File2">Choose Icon :</label>
+                                    <input type="file" class="form-control-file rounded" id="File2" name="icon"
+                                        style="border:1px solid black;">
+                                </div>
+
 
                                 <div class="form-group">
                                     <a href="{{route('category.index')}}" class="btn btn-dark btn-sm mb-3">

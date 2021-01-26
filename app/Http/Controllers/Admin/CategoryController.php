@@ -37,7 +37,8 @@ class CategoryController extends Controller
         $category = Category::create([
             'name'=>$request->name,
             'image'=>$imageName,
-            'icon'=>$iconName,
+            'icon' => $iconName
+
         ]);
         if($category)
         {
@@ -70,6 +71,8 @@ class CategoryController extends Controller
         $category = $request->category;
         $category = Category::find($id);
         $image = $request->image;
+        $icon = $request->icon;
+
         if($image)
         {
             $path = public_path() . '/category/'. $category->image;
@@ -81,7 +84,9 @@ class CategoryController extends Controller
             $imageName = $category->image;
         }
 
+
         $icon = $request->icon;
+
         if($icon)
         {
             $path = public_path() . '/category/'. $category->icon;
@@ -93,10 +98,10 @@ class CategoryController extends Controller
             $iconName = $category->icon;
         }
 
-
         $category->name = $request->name;
         $category->image = $imageName;
-        $category->icon=$iconName;
+        $category->icon = $iconName;
+
         $category->save();
 
         return redirect(route('category.index'))->with('success','Edited Successful');

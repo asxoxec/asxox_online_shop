@@ -16,6 +16,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('subcategory',SubCategoryController::class);
     Route::resource('tag',TagController::class);
     Route::resource('product',ProductController::class);
+    Route::get('product/restore/{id}',[ProductController::class,'restoreproudct'])->name('product.restore');
     Route::resource('detail',DetailController::class);
     Route::get('customer',[CustomerController::class,'index'])->name('customer.index');
     Route::get('order',[OrderController::class,'index'])->name('order.index');

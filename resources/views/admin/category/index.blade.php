@@ -43,6 +43,7 @@
                                     <th>No</th>
                                     <th>Name</th>
                                     <th>Image</th>
+                                    <th>Icon</th>
                                     <th>Sub Category</th>
                                     <th>Action</th>
                                 </tr>
@@ -55,6 +56,10 @@
                                     <td>{{$category->name}}</td>
                                     <td>
                                         <img src="{{asset('category/'.$category->image)}}"
+                                            style="width:50px !important;">
+                                    </td>
+                                    <td>
+                                        <img src="{{asset('category/'.$category->icon)}}"
                                             style="width:50px !important;">
                                     </td>
                                     <td>
