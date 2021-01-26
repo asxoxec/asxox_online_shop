@@ -52,6 +52,15 @@
                                     <input type="file" class="form-control-file" id="File1" name="image">
                                 </div>
 
+                                <div class="form-group">
+                                    <img src="{{asset('category/'.$category->icon)}}" style="width:50px !important;">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="File2">Choose Icon :</label>
+                                    <input type="file" class="form-control-file" id="File2" name="icon">
+                                </div>
+
 
                                 <div class="form-group">
                                     <a href="{{route('category.index')}}" class="btn btn-dark btn-sm mb-3">

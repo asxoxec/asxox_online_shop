@@ -16,7 +16,7 @@ class ProductController extends Controller
     
     public function index()
     {
-        $products = Product::all();
+        $products = Product::withTrashed()->get();
         return view('admin.product.index',compact('products'));
     }
 
@@ -244,10 +244,16 @@ class ProductController extends Controller
     
     public function destroy($id)
     {
-        $task = Product::find($id);
-        $path = public_path() . '/product/'. $task->image;
-        unlink($path);
-        $task->delete();
+        $product = Product::find($id);
+        // $path = public_path() . '/product/'. $product->image;
+        // unlink($path);
+        $product->delete();
+        return redirect()->back();
+    }
+
+    public function restoreproudct($id)
+    {
+        Product::withTrashed()->where('id', $id)->restore();
         return redirect()->back();
     }
 }
