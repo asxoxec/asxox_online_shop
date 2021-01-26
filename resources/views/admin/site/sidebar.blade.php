@@ -74,6 +74,15 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{route('customer.index')}}" class="nav-link {{ (request()->is('admin/customer')) ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Customers
+                        </p>
+                    </a>
+                </li>
+
                 <!-- <li class="nav-item has-treeview">
                     <a href="#" class="nav-link ">
                         <i class="nav-icon fas fa-cart-arrow-down"></i>
