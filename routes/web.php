@@ -17,8 +17,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('tag',TagController::class);
     Route::resource('product',ProductController::class);
     Route::resource('detail',DetailController::class);
-    Route::get('customer',[CustomerController::class,'index'])->name('admin.customer.list');
-    Route::get('order',[OrderController::class,'index'])->name('admin.order.list');
+    Route::get('customer',[CustomerController::class,'index'])->name('customer.index');
+    Route::get('order',[OrderController::class,'index'])->name('order.index');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

@@ -15,13 +15,15 @@ class CategorySeeder extends Seeder
     public function run()
     {
         $categories=[
-            ["name"=>"အိမ်သုံး ပစ္စည်းများ","image"=>"1611390662_user6-128x128.jpg"],
+            ["name"=>"အိမ်သုံး ပစ္စည်းများ","image"=>"1611390662_user6-128x128.jpg","icon"=>"1611390662_user6-128x128.jpg"],
         ];
 
         foreach($categories as $category){
             Category::create([
                 'name'=>$category['name'],
-                'image'=>$category['image']
+                'image'=>$category['image'],
+                'icon'=>$category['icon'],
+
             ]);
         }
     }

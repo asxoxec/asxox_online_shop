@@ -9,28 +9,35 @@ use App\Http\Requests\CategoryRequest;
 
 class CategoryController extends Controller
 {
-    
+
     public function index()
     {
         $categories = Category::all();
         return view('admin.category.index',compact('categories'));
     }
 
-    
+
     public function create()
     {
         return view('admin.category.create');
     }
 
-    
+
     public function store(CategoryRequest $request)
     {
         $image = $request->image;
         $imageName = time() . '_' . $image->getClientOriginalName();
         $image->move(public_path() . '/category/', $imageName);
+
+        $icon = $request->icon;
+        $iconName = time() . '_' . $icon->getClientOriginalName();
+        $icon->move(public_path() . '/category/', $iconName);
+
+
         $category = Category::create([
             'name'=>$request->name,
-            'image'=>$imageName
+            'image'=>$imageName,
+            'icon'=>$iconName,
         ]);
         if($category)
         {
@@ -39,21 +46,21 @@ class CategoryController extends Controller
 
     }
 
-    
+
     public function show($id)
     {
         $category = Category::findOrFail($id);
         return view('admin.category.show',compact('category'));
     }
 
-    
+
     public function edit($id)
     {
         $category =Category::find($id);
         return view('admin.category.edit',compact('category'));
     }
 
-    
+
     public function update(Request $request, $id)
     {
         $this->validate(request(),[
@@ -73,14 +80,29 @@ class CategoryController extends Controller
         else{
             $imageName = $category->image;
         }
+
+        $icon = $request->icon;
+        if($icon)
+        {
+            $path = public_path() . '/category/'. $category->icon;
+            unlink($path);
+            $iconName = time() . '_' . $icon->getClientOriginalName();
+            $icon->move(public_path() . '/category/', $iconName);
+        }
+        else{
+            $iconName = $category->icon;
+        }
+
+
         $category->name = $request->name;
         $category->image = $imageName;
+        $category->icon=$iconName;
         $category->save();
-        
+
         return redirect(route('category.index'))->with('success','Edited Successful');
     }
 
-    
+
     public function destroy($id)
     {
         $category=Category::find($id)->delete();
