@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
+use App\Models\Product_Image;
 use App\Http\Controllers\Controller;
 
 
@@ -32,17 +33,12 @@ class ProductController extends Controller
     {
         $request->validate([
             'pdescription' => 'required',
-
             'ptitle' => 'required',
             'pimage' => 'required',
             'pprice' => 'required',
-
             'category_id' => 'required',
             'subcategory_id' => 'required'
          ]);
-
-
-
 
 
         if(isset($request->price))
@@ -54,36 +50,16 @@ class ProductController extends Controller
              ]);
         }
 
-        $detail= $request->pdescription;
-        $title = $request->ptitle;
-
-        $path = public_path('product/'.$title);
-
-        $dom = new \DomDocument();
-        $dom->loadHtml($detail, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        $images = $dom->getElementsByTagName('img');
-
-        foreach($images as $k => $img){
-        $data = $img->getAttribute('src');
-        list($type, $data) = explode(';', $data);
-        list(, $data)      = explode(',', $data);
-        $data = base64_decode($data);
-        $image_name = "/product/description/".time().$k.'.png';
-        $path = public_path() . $image_name;
-        file_put_contents($path, $data);
-        $new_src = asset($image_name);
-        $img->removeAttribute('src');
-        $img->setAttribute('src', $new_src);
-        }
-
-        $detail = $dom->saveHTML();
 
         $cover = $request->pimage;
         $covername = time() . '_' . $cover->getClientOriginalName();
         $cover->move(public_path() . '/product/', $covername);
 
         $product = Product::create([
-            'description' => $detail,
+            'description' => $request->pdescription,
+
+            'url' => $request->pvideourl,
+
             'title' => $request->ptitle,
             'cover' => $covername,
             'size' => $request->psize,
@@ -91,9 +67,28 @@ class ProductController extends Controller
             'price' => $request->pprice,
             'discount' => $request->pdiscount,
             'category_id' => $request->category_id,
-            'subcategory_id' => $request->subcategory_id
+            'subcategory_id' => $request->subcategory_id,
+
 
         ]);
+
+
+            $images=$request->pdescriptionimg;
+
+
+            foreach($images as $image ){
+                $imagename = time() . '_' . $image->getClientOriginalName();
+                $image->move(public_path() . '/product/', $imagename);
+                Product_Image::create([
+                    'product_id'=>$product->id,
+                    'image'=>$imagename
+                ]);
+            }
+
+
+
+
+
 
          if(isset($request->price) && count($request->price) > 0)
          {
@@ -137,6 +132,11 @@ class ProductController extends Controller
     }
 
 
+
+
+
+
+
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -158,42 +158,6 @@ class ProductController extends Controller
 
         $product = Product::find($id);
 
-
-        $orgpath = public_path('product/'.$product->title);
-
-        $detail= $request->pdescription;
-        $title = $request->ptitle;
-
-        $newpath = public_path('product/'.$title);
-
-        $dom = new \DomDocument();
-        $dom->loadHtml($detail, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        $images = $dom->getElementsByTagName('img');
-
-
-
-        foreach($images as $k => $img){
-            $data = $img->getAttribute('src');
-            $searchForValue = ',';
-            if( strpos($data, $searchForValue) !== false )
-            {
-                list($type, $data) = explode(';', $data);
-                list(, $data)      = explode(',', $data);
-                $data = base64_decode($data);
-                $image_name = "/product/description/".time().$k.'.png';
-                $path = public_path() . $image_name;
-                file_put_contents($path, $data);
-                $new_src = asset($image_name);
-                $img->removeAttribute('src');
-                $img->setAttribute('src', $new_src);
-            }
-
-        }
-
-
-
-        $detail = $dom->saveHTML();
-
         $cover = $request->pimage;
 
         if($cover)
@@ -209,7 +173,9 @@ class ProductController extends Controller
 
 
         $product->update([
-            'description' => $detail,
+            'description' => $request->pdescription,
+            'url' => $request->pvideourl,
+
             'title' => $request->ptitle,
             'cover' => $covername,
             'size' => $request->psize,
@@ -220,6 +186,46 @@ class ProductController extends Controller
             'subcategory_id' => $request->subcategory_id
 
         ]);
+
+
+
+        $images=$request->pdescriptionimg;
+
+
+
+        if($images)
+        {
+
+
+            foreach($images as $image ){
+                $path = public_path() . '/product/'. $product->product_image->image;
+                unlink($path);
+                $imagename = time() . '_' . $image->getClientOriginalName();
+                $image->move(public_path() . '/product/', $imagename);
+                Product_Image::create([
+                    'product_id'=>$product->id,
+                    'image'=>$imagename
+                ]);
+            }
+        }
+        else{
+            $imagename = $product->product_image->image;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
          if(isset($request->price) && count($request->price) > 0)
          {

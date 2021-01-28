@@ -45,41 +45,6 @@
                                     <section class="content">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <div class="card card-outline card-info">
-                                                    <div class="card-header">
-                                                        <h3 class="card-title">
-                                                            Product Description Only Text And Image
-                                                        </h3>
-                                                        <!-- tools box -->
-                                                        <div class="card-tools">
-                                                            <button type="button" class="btn btn-tool btn-sm"
-                                                                data-card-widget="collapse" data-toggle="tooltip"
-                                                                title="Collapse">
-                                                                <i class="fas fa-minus"></i></button>
-                                                        </div>
-                                                        <!-- /. tools -->
-                                                    </div>
-                                                    <!-- /.card-header -->
-                                                    <div class="card-body pad">
-                                                        <div class="mb-3">
-                                                            <textarea class="textarea"
-                                                                placeholder="Place some text here" name="pdescription"
-                                                                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- /.col-->
-                                        </div>
-                                        <!-- ./row -->
-                                    </section>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <section class="content">
-                                        <div class="row">
-                                            <div class="col-md-12">
                                                 <div class="card card-outline card-success">
                                                     <div class="card-header">
                                                         <h3 class="card-title">
@@ -95,7 +60,7 @@
                                                         <!-- /. tools -->
                                                     </div>
                                                     <!-- /.card-header -->
-                                                    <div class="card-body pad">
+                                                    <div class="card-body pad" style="padding-bottom:5px;">
                                                         <div class="mb-3">
                                                             <div class="form-group">
                                                                 <label for="name">Title :</label>
@@ -115,18 +80,16 @@
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <label for="pprice">Size :</label>
-                                                                        <input type="text"
-                                                                            class="form-control rounded" id="psize"
-                                                                            name="psize"
+                                                                        <input type="text" class="form-control rounded"
+                                                                            id="psize" name="psize"
                                                                             style="border:1px solid black;">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <label for="pdiscount">Color :</label>
-                                                                        <input type="text"
-                                                                            class="form-control rounded" id="pcolor"
-                                                                            name="pcolor"
+                                                                        <input type="text" class="form-control rounded"
+                                                                            id="pcolor" name="pcolor"
                                                                             style="border:1px solid black;">
                                                                     </div>
                                                                 </div>
@@ -152,6 +115,41 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+
+
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /.col-->
+                                        </div>
+                                        <!-- ./row -->
+                                    </section>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <section class="content">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card card-outline card-info">
+                                                    <div class="card-header">
+                                                        <h3 class="card-title">
+                                                            Product Description
+                                                        </h3>
+                                                        <!-- tools box -->
+                                                        <div class="card-tools">
+                                                            <button type="button" class="btn btn-tool btn-sm"
+                                                                data-card-widget="collapse" data-toggle="tooltip"
+                                                                title="Collapse">
+                                                                <i class="fas fa-minus"></i></button>
+                                                        </div>
+                                                        <!-- /. tools -->
+                                                    </div>
+                                                    <!-- /.card-header -->
+                                                    <div class="card-body pad">
+                                                        <div class="mb-3">
 
                                                             <div class="row">
                                                                 <div class="col-md-6">
@@ -186,6 +184,28 @@
                                                                 </div>
                                                             </div>
 
+                                                            <div class="form-group">
+                                                                <label for="File4">Description Image :</label>
+                                                                <input type="file" class="form-control-file rounded"
+                                                                    id="File4" name="pdescriptionimg[]"
+                                                                    style="border:1px solid black;" multiple>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="pdescription">Description Title :</label>
+                                                                <input type="text" class="form-control rounded"
+                                                                    id="pdescription" name="pdescription"
+                                                                    placeholder="Please Fill Description Title"
+                                                                    style="border:1px solid black;" multiple>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="video">Video Url :</label>
+                                                                <input type="url" class="form-control" id="video"
+                                                                    name="pvideourl" placeholder="Please Fill URL"
+                                                                    style="border:1px solid black;" multiple>
+                                                            </div>
+
                                                         </div>
 
                                                     </div>
@@ -196,6 +216,8 @@
                                         <!-- ./row -->
                                     </section>
                                 </div>
+
+
 
 
                                 <div class="col-md-12">
@@ -300,7 +322,7 @@
       <input type="file" id="image" name="image[]"
                                         style="border:1px solid black;" value="@{{ image }}">
       </td>
-      
+
       <td>
         <input type="text" name="size[]" value="@{{ size }}">
       </td>
@@ -316,7 +338,7 @@
       <td>
         <input type="number" class="discount" name="discount[]" value="@{{ discount }}">
       </td>
-  
+
       <td>
        <a class="removeaddmore  btn-danger btn-sm" style="cursor:pointer;">
        <span class="fa fa-minus"></span>
@@ -357,17 +379,6 @@
                 $(document).on('click', '.removeaddmore', function(event) {
                     $(this).closest('.delete_add_more_item').remove();
                 });
-                </script>
-
-                <script>
-                $(function() {
-                    // Summernote
-                    $('.textarea').summernote({
-                        height: 370,
-                        placeholder: 'Please Fill Product Description',
-                        minHeight: 370,
-                    })
-                })
                 </script>
 
                 </body>

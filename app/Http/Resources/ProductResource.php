@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use App\Http\Resources\DetailResource;
+use App\Http\Resources\Product_ImageResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProductResource extends JsonResource
@@ -18,7 +19,6 @@ class ProductResource extends JsonResource
         return [
             'id'=>$this->id,
             'title'=>$this->title,
-            'description'=>$this->description,
             'cover'=>asset('product/'.$this->cover),
             'price'=>$this->price,
             'color'=>$this->color,
@@ -27,6 +27,9 @@ class ProductResource extends JsonResource
             'category'=>$this->category->id,
             'subcategory'=>$this->subcategory->id,
             'detail'=>DetailResource::collection($this->details),
+            'description_text'=>$this->description,
+            'description_image'=>Product_ImageResource::collection($this->product_image),
+            'description_url'=>$this->url
 
         ];
     }

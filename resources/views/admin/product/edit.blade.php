@@ -48,41 +48,6 @@
                                     <section class="content">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <div class="card card-outline card-info">
-                                                    <div class="card-header">
-                                                        <h3 class="card-title">
-                                                            Product Description Only Text And Image
-                                                        </h3>
-                                                        <!-- tools box -->
-                                                        <div class="card-tools">
-                                                            <button type="button" class="btn btn-tool btn-sm"
-                                                                data-card-widget="collapse" data-toggle="tooltip"
-                                                                title="Collapse">
-                                                                <i class="fas fa-minus"></i></button>
-                                                        </div>
-                                                        <!-- /. tools -->
-                                                    </div>
-                                                    <!-- /.card-header -->
-                                                    <div class="card-body pad">
-                                                        <div class="mb-3">
-                                                            <textarea class="textarea" name="pdescription"
-                                                                placeholder="Place some text here"
-                                                                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- /.col-->
-                                        </div>
-                                        <!-- ./row -->
-                                    </section>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <section class="content">
-                                        <div class="row">
-                                            <div class="col-md-12">
                                                 <div class="card card-outline card-success">
                                                     <div class="card-header">
                                                         <h3 class="card-title">
@@ -124,18 +89,18 @@
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <label for="pprice">Size :</label>
-                                                                        <input type="text"
-                                                                            class="form-control rounded" id="psize"
-                                                                            name="psize" value="{{$product->size}}"
+                                                                        <input type="text" class="form-control rounded"
+                                                                            id="psize" name="psize"
+                                                                            value="{{$product->size}}"
                                                                             style="border:1px solid black;">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <label for="pdiscount">Color :</label>
-                                                                        <input type="text"
-                                                                            class="form-control rounded" id="pcolor"
-                                                                            name="pcolor" value="{{$product->color}}"
+                                                                        <input type="text" class="form-control rounded"
+                                                                            id="pcolor" name="pcolor"
+                                                                            value="{{$product->color}}"
                                                                             style="border:1px solid black;">
                                                                     </div>
                                                                 </div>
@@ -162,6 +127,41 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+
+
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /.col-->
+                                        </div>
+                                        <!-- ./row -->
+                                    </section>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <section class="content">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card card-outline card-info">
+                                                    <div class="card-header">
+                                                        <h3 class="card-title">
+                                                            Product Description
+                                                        </h3>
+                                                        <!-- tools box -->
+                                                        <div class="card-tools">
+                                                            <button type="button" class="btn btn-tool btn-sm"
+                                                                data-card-widget="collapse" data-toggle="tooltip"
+                                                                title="Collapse">
+                                                                <i class="fas fa-minus"></i></button>
+                                                        </div>
+                                                        <!-- /. tools -->
+                                                    </div>
+                                                    <!-- /.card-header -->
+                                                    <div class="card-body pad">
+                                                        <div class="mb-3">
 
                                                             <div class="row">
                                                                 <div class="col-md-6">
@@ -198,6 +198,27 @@
                                                                 </div>
                                                             </div>
 
+                                                            <div class="form-group">
+                                                                <label for="File4">Description Image :</label>
+                                                                <input type="file" class="form-control-file rounded"
+                                                                    id="File4" name="pdescriptionimg"
+                                                                    style="border:1px solid black;" multiple>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="pdescription">Description Title :</label>
+                                                                <input type="text" class="form-control rounded"
+                                                                    id="pdescription" name="pdescription"
+                                                                    placeholder="Please Fill Description Title"
+                                                                    style="border:1px solid black;" multiple>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="video">Video Url :</label>
+                                                                <input type="url" class="form-control" id="video"
+                                                                    name="pvideourl" placeholder="Please Fill URL"
+                                                                    style="border:1px solid black;" multiple>
+                                                            </div>
                                                         </div>
 
                                                     </div>
@@ -208,6 +229,8 @@
                                         <!-- ./row -->
                                     </section>
                                 </div>
+
+
 
 
                                 <div class="col-md-12">
@@ -301,7 +324,8 @@
 
                                                         <!-- Modal Header -->
                                                         <div class="modal-header">
-                                                            <h4 class="modal-title text-danger ">Are You Sure Want To Delete
+                                                            <h4 class="modal-title text-danger ">Are You Sure Want To
+                                                                Delete
                                                                 ?
                                                             </h4>
                                                             <button type="button" class="close"
@@ -309,9 +333,10 @@
                                                         </div>
 
                                                         <div class="modal-body">
-                                                        <div class="form-group text-center">
+                                                            <div class="form-group text-center">
                                                                 <img src="{{asset('detail/'.$detail->image)}}"
-                                                                    style="width:100px !important;" class="img-thumbnail">
+                                                                    style="width:100px !important;"
+                                                                    class="img-thumbnail">
                                                             </div>
 
                                                         </div>
@@ -375,7 +400,7 @@
       <input type="file" id="image" name="image[]"
                                         style="border:1px solid black;" value="@{{ image }}">
       </td>
-      
+
       <td>
         <input type="text" name="size[]" value="@{{ size }}">
       </td>
@@ -391,7 +416,7 @@
       <td>
         <input type="number" class="discount" name="discount[]" value="@{{ discount }}">
       </td>
-  
+
       <td>
        <a class="removeaddmore  btn-danger btn-sm" style="cursor:pointer;">
        <span class="fa fa-minus"></span>
@@ -434,18 +459,6 @@
                 });
                 </script>
 
-                <script>
-                $(function() {
-                    // Summernote
-                    $('.textarea').summernote({
-                        height: 285,
-                        placeholder: 'Please Fill Product Description',
-                        minHeight: 350,
-                    }).summernote('Ok');
-                    var markupStr = `@php echo $product->description @endphp`;
-                    $('.textarea').summernote('code', markupStr);
-                })
-                </script>
 
                 </body>
 
