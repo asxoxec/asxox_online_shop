@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->text('url');
+            $table->text('url')->nullable();
             $table->string('cover');
             $table->string('size')->nullable();
             $table->string('color')->nullable();

@@ -19,7 +19,11 @@ class CategorySeeder extends Seeder
             ["name"=>"ကျန်းမာရေး ပစ္စည်းများ","image"=>"g_850x.jpg","icon"=>"medical.png"],
             ["name"=>"အလှအပ ပစ္စည်းများ","image"=>"c_850x.jpg","icon"=>"cosmectic.png"],
             ["name"=>"အားကစားပစ္စည်းများ","image"=>"e_850x.jpg","icon"=>"sports.png"],
-            ["name"=>"ထီးများ","image"=>"umbrella_85o.jpg","icon"=>"umbrella.png"],
+            ["name"=>"Clothes","image"=>"umbrella_85o.jpg","icon"=>"umbrella.png"],
+            ["name"=>"ယောက်ျားလေးအဝတ်အစား","image"=>"umbrella_85o.jpg","icon"=>"toys.png"],
+        ["name"=>"ဖိနပ်များ","image"=>"umbrella_85o.jpg","icon"=>"shoe.png"],
+
+
         ];
 
         foreach($categories as $category){

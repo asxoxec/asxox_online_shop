@@ -19,7 +19,7 @@ class SubCategorySeeder extends Seeder
             ["name"=>"ကစားစရာများ","image"=>"toys.png","category_id"=>2],
             ["name"=>"လက်ဝတ်ရတနာများ","image"=>"jewellary.png","category_id"=>3],
             ["name"=>"ဖိနပ်များ","image"=>"shoe.png","category_id"=>4],
-            ["name"=>"နာရီများ","image"=>"watch.png","category_id"=>5],
+            ["name"=>"Shirts","image"=>"watch.png","category_id"=>5],
 
 
         ];
