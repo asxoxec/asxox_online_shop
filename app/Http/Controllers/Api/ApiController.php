@@ -30,7 +30,6 @@ class ApiController extends Controller
 
     public function me(){
         $user = Auth::user();
-        // return response()->json(auth()->user());
         return $this->successResponse(new UserResource($user),200);
     }
 

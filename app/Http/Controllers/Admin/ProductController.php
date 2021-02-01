@@ -59,7 +59,7 @@ class ProductController extends Controller
             'description' => $request->pdescription,
 
             'url' => $request->pvideourl,
-
+            'barcode'=>$request->barcode,
             'title' => $request->ptitle,
             'cover' => $covername,
             'size' => $request->psize,
@@ -175,7 +175,7 @@ class ProductController extends Controller
         $product->update([
             'description' => $request->pdescription,
             'url' => $request->pvideourl,
-
+            'barcode'=>$request->barcode,
             'title' => $request->ptitle,
             'cover' => $covername,
             'size' => $request->psize,

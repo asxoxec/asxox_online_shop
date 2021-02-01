@@ -39,7 +39,7 @@ class OrderController extends Controller
         $products=$request->product;
           foreach ($products as $product)
           $order->products()->attach($product['id']);
-           return "success";
+           return  $this->successResponse(new OrderResource($order),200);
 
     }
 }
